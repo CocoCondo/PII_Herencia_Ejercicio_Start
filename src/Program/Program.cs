@@ -7,6 +7,18 @@ namespace PII_Herencia
     {
         static void Main(string[] args)
         {
+            Print printer = new Print();
+            UserManager usermanager = UserManager.GetInstance();
+            usermanager.Attach(printer);
+            User pasajero1 = new Passenger("Leo", "Conde", 123);
+            User pasajero2 = new Passenger("Pepe", "Onzuma", 323);
+            User pasajero3 = new Passenger("Mauricio", "Josue", 645);
+            usermanager.AddUser(pasajero1);
+            usermanager.AddUser(pasajero2);
+            usermanager.AddUser(pasajero3);
+            Console.WriteLine(pasajero1.Name+pasajero1.UserID);
+            Console.WriteLine(pasajero2.Name+pasajero2.UserID+pasajero1.GetType().Name);
+            Console.WriteLine(User.GlobalUserID);
             /*
             En éste método deberas mostrar un ejemplo de funcionamiento de tu programa an pseudocódigo. A continuación te 
             planteamos un ejemplo de como hacerlo. Esto no significa que te limites a hacer solamente esto, debes pensar 
