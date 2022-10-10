@@ -5,7 +5,7 @@ namespace Herencia;
 
 public class Passenger : User
 {
-    public Passenger(string forename, string surname, int id) : base(forename, surname, id)
+    public Passenger(string forename, string surname, int id, string profilepicture) : base(forename, surname, id, profilepicture)
     {
 
     }

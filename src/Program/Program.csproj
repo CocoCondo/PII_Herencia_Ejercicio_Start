@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj" />
     <ProjectReference Include="..\Twitter Library\Library.csproj" />
+    <ProjectReference Include="..\CogLibrary\Library.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

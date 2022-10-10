@@ -7,15 +7,20 @@ namespace Herencia
     {
         static void Main(string[] args)
         {
-            Print printer = new Print();
+            GetWelcomeText printer = new GetWelcomeText();
             UserManager usermanager = UserManager.GetInstance();
             usermanager.Attach(printer);
-            User pasajero1 = new Passenger("Leo", "Conde", 123);
-            User pasajero2 = new Passenger("Pepe", "Onzuma", 323);
-            User pasajero3 = new Passenger("Mauricio", "Josue", 645);
+            User pasajero1 = new Passenger("Leo", "Conde", 123, "..\\ProfilePics\\256x256bb.jpg");
+            User pasajero2 = new Passenger("José", "Onzuma", 323, "..\\ProfilePics\\2d035609483aad6a14b4b7a45223b32e.jpg");
+            User pasajero3 = new Passenger("Mauricio", "Josue", 645, "..\\ProfilePics\\64ef980138c10eed414880785c501820.jpg");
+            User conductor1 = new Driver("Santi", "Almagro", 5533, "..\\ProfilePics\\256x256bb.jpg", "Apuesto chofer para las nenas de la UCU", "Fiat 600");
+            User conductorPool1 = new PoolDriver("Sofi", "Hernández", 9958, "..\\ProfilePics\\256x256bb.jpg", "Chofer de Pool nueva", "Suzuki Celerio", 4);
+            Ride rideshare = new Ride();
             usermanager.AddUser(pasajero1);
             usermanager.AddUser(pasajero2);
             usermanager.AddUser(pasajero3);
+            usermanager.AddUser(conductor1);
+            usermanager.AddUser(conductorPool1);
 
             /*Console.WriteLine(pasajero1.Name+pasajero1.UserID);
             Console.WriteLine(pasajero2.Name+pasajero2.UserID+pasajero1.GetType().Name);
