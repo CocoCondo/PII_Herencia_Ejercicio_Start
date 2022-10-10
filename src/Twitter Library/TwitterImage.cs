@@ -87,7 +87,7 @@ namespace Herencia
 
                 return "OK";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // log exception somewhere
                 return "Unknown error publishing to Twitter";
