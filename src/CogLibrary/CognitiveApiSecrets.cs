@@ -1,4 +1,4 @@
-namespace CognitiveCoreUCU
+namespace Herencia
 {
     public class CognitiveApiSecrets
     {

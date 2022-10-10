@@ -15,7 +15,7 @@ using SixLabors.Shapes;
 using Nito.AsyncEx;
 using System.Text.Json;
 
-namespace CognitiveCoreUCU
+namespace Herencia
 {
     public class CognitiveFace
     {

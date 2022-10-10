@@ -31,4 +31,8 @@ public abstract class User
             return this.Forename;
         }
     }
+    public override string ToString()
+    {
+        return $"(User No.{this.UserID}){this.GetType().Name}: {this.Forename} {this.Surname}; ID: {this.Id}; Score:{this.Score}";
+    }
 }

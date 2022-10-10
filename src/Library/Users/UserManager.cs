@@ -30,15 +30,27 @@ public sealed class UserManager : ISubject
     }
     public void AddUser(User user)
     {
-        CognitiveFace cog = new CognitiveFace(true, Color.GreenYellow);
         if (userList.Contains(user))
         {
             Console.WriteLine($"ERROR: User {user} is already on the list");
         }
         else
         {
-            this.userList.Add(user);
-            this.Notify(user); //Notifica a los observers
+            bool[] FaceCheckResult = CheckFace.Check(user);
+            if((user is Passenger && FaceCheckResult[0]) || (user is Driver && FaceCheckResult[1]))
+            {
+                this.userList.Add(user);
+                Console.WriteLine($"CONSOLE: {user.Name} Successfully registered!");
+                //this.Notify(user); //Notifica a los observers
+            }
+            else if((FaceCheckResult[1] == false) && FaceCheckResult[0] == true)
+            {
+                Console.WriteLine($"ERROR: Our system cannot recognise a smile on {user.Name}'s picture");
+            }
+            else
+            {
+                Console.WriteLine($"ERROR: Our system cannot recognise a face on {user.Name}'s picture. Please provide another picture.");
+            }
         }
     }
     public void RemoveUser(User user)
@@ -64,5 +76,16 @@ public sealed class UserManager : ISubject
             _instance = new UserManager();
         }
         return _instance;
+    }
+
+    public override string ToString()
+    {
+        var result = new System.Text.StringBuilder();
+        result.Append("CONSOLE: Registered Users: \n");
+        foreach(User user in userList)
+        {
+            result.Append(user.ToString()+"\n");
+        }
+        return result.ToString();
     }
 }
