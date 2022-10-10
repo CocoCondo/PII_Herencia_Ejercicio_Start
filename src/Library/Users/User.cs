@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PII_Herencia;
+namespace Herencia;
 
 public abstract class User
 {

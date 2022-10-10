@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace PII_Herencia
+namespace Herencia
 {
     class Program
     {
@@ -16,9 +16,12 @@ namespace PII_Herencia
             usermanager.AddUser(pasajero1);
             usermanager.AddUser(pasajero2);
             usermanager.AddUser(pasajero3);
-            Console.WriteLine(pasajero1.Name+pasajero1.UserID);
+
+            /*Console.WriteLine(pasajero1.Name+pasajero1.UserID);
             Console.WriteLine(pasajero2.Name+pasajero2.UserID+pasajero1.GetType().Name);
             Console.WriteLine(User.GlobalUserID);
+            */
+
             /*
             En éste método deberas mostrar un ejemplo de funcionamiento de tu programa an pseudocódigo. A continuación te 
             planteamos un ejemplo de como hacerlo. Esto no significa que te limites a hacer solamente esto, debes pensar 
